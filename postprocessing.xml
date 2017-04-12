@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	
+
+	<target name="dita-semia.pdf.outputfile">
+		
+		<echo message="XSL: ${dita-semia.pdf.outputfile.xsl}"/>
+		
+		<if>
+			<isset property="dita-semia.pdf.outputfile.xsl"/>
+			<then>
+				<property name="map-pdfname-file" value="${dita.temp.dir}${file.separator}map-pdfname.txt"/>
+				<xslt 
+					basedir	= "${dita.temp.dir}" 
+					in		= "${inputFile}" 
+					out		= "${map-pdfname-file}" 
+					style	= "${dita-semia.pdf.outputfile.xsl}">
+				</xslt>
+				<loadfile property="map-pdfname" srcFile="${map-pdfname-file}"/>
+				<if>
+					<isset property="map-pdfname"/>
+					<then>
+						<property name="outputFile" value="${dita.map.output.dir}${file.separator}${map-pdfname}"/>
+						<echo message="Set output file to '${map-pdfname}'"/>
+					</then>
+					<else>
+						<echo message="WARNING: no pdf filename returned by xsl script - using default."/>
+					</else>
+				</if>
+			</then>
+		</if>
+		
+	</target>
+	
+		
+	<target name="dita-semia.pdf.postprocessing">
+		<if>
+			<istrue value="${dita-semia.postprocessing.zip}"/>
+			<then>
+				<zip destfile="${outputFile}.zip" update="true">
+					<fileset file="${outputFile}"/>
+				</zip>
+			</then>
+		</if>
+	</target>
+	
+	
+	<target name="dita-semia.html.postprocessing">
+		<if>
+			<istrue value="${dita-semia.postprocessing.zip}"/>
+			<then>
+				<zip destfile="${output.dir}.zip" basedir="${output.dir}" update="true">
+				</zip>
+			</then>
+		</if>
+	</target>
+
+
+
+</project>
+

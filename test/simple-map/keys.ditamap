@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:oasis:names:tc:dita:xsd:map.xsd">
+	<keydef keys="product">
+		<topicmeta>
+			<keywords>
+				<keyword product="product1">Product-1</keyword>
+				<keyword product="product2">Product-2</keyword>
+			</keywords>
+		</topicmeta>
+	</keydef>
+</map>
+    
+    
+

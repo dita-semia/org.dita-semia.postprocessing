@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:oasis:names:tc:dita:xsd:bookmap.xsd">
+	<booktitle>
+		<mainbooktitle>Simple Map <keyword keyref="product"/></mainbooktitle>
+	</booktitle>
+	<bookmeta>
+		<data name="pdf-name">simple-map-<keyword keyref="product"/>.pdf</data>
+	</bookmeta>
+	<frontmatter>
+		<mapref href="keys.ditamap" processing-role="resource-only"/>
+	</frontmatter>
+	<chapter href="topic.dita"/>
+</bookmap>
