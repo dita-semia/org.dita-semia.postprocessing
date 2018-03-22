@@ -1,5 +1,5 @@
 # DITA-SEMIA Postprocessing
-This DITA-OT plugin can convert images used by DITA maps for HTML output as a preprocess step.
+This DITA-OT plugin can perform some post-processing on the pulished content: set pdf filename depending on content (e.g. metadata) and zipping the result.
 
 
 ## Features:
@@ -11,8 +11,8 @@ This DITA-OT plugin can convert images used by DITA maps for HTML output as a pr
 ## Parameters (ant properties):
 - **dita-semia.pdf.outputfile.xsl**
 
-  Absolute path to the xsl script returning the PDF filename as text. The input to the script is the merged dita map file. Make sure to the output mode to text.
-  If this parameter is not set or the returned string is empty the PDF filename will no be changed. 
+  Absolute path to the xsl script returning the PDF filename as text. The input to the script is the merged dita map file. Make sure to set the output mode to text.
+  If this parameter is not set or the returned string is empty the PDF filename will not be changed. 
 
 - **dita-semia.postprocessing.zip**
 
