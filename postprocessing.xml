@@ -51,8 +51,44 @@
 		<if>
 			<istrue value="${dita-semia.postprocessing.zip}"/>
 			<then>
-				<zip destfile="${output.dir}.zip" basedir="${output.dir}" update="true">
-				</zip>
+				<zip destfile="${output.dir}.zip" basedir="${output.dir}" update="true"/>
+			</then>
+		</if>
+	</target>
+	
+	<target name="dita-semia.preprocess.compare-result">
+		<if>
+			<isset property="dita-semia.preprocess-result-compare-file"/>
+			<then>
+				<if>
+					<not>
+						<isset property="dita-semia.postprocessing.preprocess-merge.xsl"/>
+					</not>
+					<then>
+						<property name="dita-semia.postprocessing.preprocess-merge.xsl" value="${dita.plugin.org.dita-semia.postprocessing.dir}/xsl/preprocessMerge.xsl"/>
+					</then>
+				</if>
+				
+				<property name="dita-semia.curr-merged-result-file" value="${dita.temp.dir}${file.separator}dita-semia.preprocess-merged-result.xml"/>
+				<xslt 
+						basedir	= "${dita.temp.dir}" 
+						in		= "${dita.temp.dir}/${user.input.file}" 
+						out		= "${dita-semia.curr-merged-result-file}" 
+						style	= "${dita-semia.postprocessing.preprocess-merge.xsl}">
+					<xmlcatalog refid="dita.catalog"/>
+				</xslt>
+				<checksum file="${dita-semia.preprocess-result-compare-file}" 	property="compareChecksum"/>
+				<checksum file="${dita-semia.curr-merged-result-file}" 			property="currChecksum"/>
+				<echo>compareChecksum: ${compareChecksum}, currChecksum: ${currChecksum}</echo>
+				<if>
+					<not>
+						<equals arg1="${currChecksum}" arg2="${compareChecksum}"/>
+					</not>
+					<then>
+						<echo>[DOTX][WARN]: The preprocess-result doesn't match with the file to compare with: ${dita-semia.preprocess-result-compare-file}</echo>
+					</then>
+				</if>
+				
 			</then>
 		</if>
 	</target>

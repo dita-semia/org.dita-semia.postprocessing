@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="org.dita-semia.postprocessing">
 	<feature extension="dita.conductor.target.relative" 		file="integrator.xml"/>
-	<feature extension="depend.org.dita.pdf2.format.pre"		value="dita-semia.pdf.outputfile" />
-	<feature extension="depend.org.dita.pdf2.format.post"		value="dita-semia.pdf.postprocessing" />
+	<feature extension="depend.org.dita.pdf2.format.pre"		value="dita-semia.pdf.outputfile"/>
+	<feature extension="depend.org.dita.pdf2.format.post"		value="dita-semia.pdf.postprocessing"/>
+	<feature extension="depend.preprocess.post"					value="dita-semia.preprocess.compare-result"/>
 </plugin>
