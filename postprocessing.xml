@@ -13,10 +13,11 @@
 			<then>
 				<property name="map-pdfname-file" value="${dita.temp.dir}${file.separator}map-pdfname.txt"/>
 				<xslt 
-					basedir	= "${dita.temp.dir}" 
-					in		= "${inputFile}" 
-					out		= "${map-pdfname-file}" 
-					style	= "${dita-semia.pdf.outputfile.xsl}">
+						basedir	= "${dita.temp.dir}" 
+						in		= "${inputFile}" 
+						out		= "${map-pdfname-file}" 
+						style	= "${dita-semia.pdf.outputfile.xsl}">
+					<xmlcatalog refid="dita.catalog"/>
 				</xslt>
 				<loadfile property="map-pdfname" srcFile="${map-pdfname-file}"/>
 				<if>

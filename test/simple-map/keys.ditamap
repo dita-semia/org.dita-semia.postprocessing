@@ -9,6 +9,13 @@
 			</keywords>
 		</topicmeta>
 	</keydef>
+	<keydef keys="version">
+		<topicmeta>
+			<keywords>
+				<keyword>1.0</keyword>
+			</keywords>
+		</topicmeta>
+	</keydef>
 </map>
     
     

@@ -6,26 +6,6 @@
             <serialized version="18.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
-                        <String>scenario.associations</String>
-                        <scenarioAssociation-array>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>test/simple-map/simple-map.ditamap</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>PDF - product1</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>DITAMAP</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                        </scenarioAssociation-array>
-                    </entry>
-                    <entry>
                         <String>scenarios</String>
                         <scenario-array>
                             <ditaScenario>

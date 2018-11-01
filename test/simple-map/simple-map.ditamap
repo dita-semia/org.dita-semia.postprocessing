@@ -4,7 +4,7 @@
 		<mainbooktitle>Simple Map <keyword keyref="product"/></mainbooktitle>
 	</booktitle>
 	<bookmeta>
-		<data name="pdf-name">simple-map-<keyword keyref="product"/>.pdf</data>
+		<data name="pdf-name">simple-map-<keyword keyref="product"/>-v<keyword keyref="version"/>.pdf</data>
 	</bookmeta>
 	<frontmatter>
 		<mapref href="keys.ditamap" processing-role="resource-only"/>
